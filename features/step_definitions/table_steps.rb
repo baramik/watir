@@ -1,27 +1,16 @@
-  Given(/^I'm on main page$/) do
+  Given(/^I am on the fotomag page$/) do
     @browser.goto('http://fotomag.com.ua/ebook/index.html')
   end
 
-	When (/^I check check-box near candidates name$/) do
+	When (/^I check check-box near v_useful_sellout$/) do
     @browser.checkbox(:id => 'v_useful_sellout').set
   end
-
 
   And (/^I reload page$/) do
     @browser.refresh
   end
 
-  #And (/^I enter Candidates name in search field$/) do
-  #  pending
-  #end
-  #
-  #And(/^I press Search button$/) do
-  # pending
-  #end
-
-  Then(/^I should see check-box checked near passed candidate$/) do
+  Then(/^I should see check-box checked near v_useful_sellout$/) do
     Watir::Wait.until{@browser.text_field(:name, 'q').visible?}
-    @browser.li(:class =>'nb').hover
-    @browser.link(:text => 'Ноутбуки').when_present.click
-    #expect(@browser.checkbox(:id => 'v_useful_sellout')).to be_checked
+    expect(@browser.checkbox(:id => 'v_useful_sellout')).to be_checked
   end
