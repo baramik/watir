@@ -1,4 +1,4 @@
-  Given(/^I am on the fotomag page$/) do
+  Given(/^I am on the fotomag main page$/) do
     @browser.goto('http://fotomag.com.ua/ebook/index.html')
   end
 
